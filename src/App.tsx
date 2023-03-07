@@ -1,34 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { redirect, useNavigate } from 'react-router-dom';
+import api from './config/api';
+import { FormContainer, MainContainer, PlatformSelect,PlatformOption, PlayersNameInput, SubmitButton } from './styles/styles'
 
-function App() {
-  const [count, setCount] = useState(0)
+import { Global } from './utils/types/PlayerStats';
+
+export default function App() {
+  const navigate = useNavigate();
+
+  async function handleSubmit(event: any) {
+    event.preventDefault();
+    
+    const platform:string = event.target.platform.value;
+    const nickname:string = event.target.nickname.value;
+
+    return navigate(`/player/${platform.toUpperCase()}/${nickname}`);
+  }
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    <MainContainer>
+      <FormContainer onSubmit={handleSubmit}>
+        <PlatformSelect id='platform'>
+          <PlatformOption value="pc">PC</PlatformOption>
+            <PlatformOption value="xbox">XBOX</PlatformOption>
+          <PlatformOption value="psn">PSN</PlatformOption>
+        </PlatformSelect>
+        <PlayersNameInput id='nickname' type="text" placeholder='Type your nickname here...'></PlayersNameInput>
+        <SubmitButton type='submit'>Submit</SubmitButton>
+      </FormContainer>
+    </MainContainer> 
+  );
 }
-
-export default App
