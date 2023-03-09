@@ -1,14 +1,18 @@
-import { useParams } from 'react-router-dom';
-import {RootObject, Global} from '../../utils/types/PlayerStats';
-import api from '../../config/api';
 import { useEffect, useState } from 'react';
-import { MainContainer } from '../../styles/styles';
-import { PlayerBigText, PlayerColumn, PlayerInfoContainer, RankImage } from './PlayerStats.styles';
+import { useParams } from 'react-router-dom';
+
+import api from '../../config/api';
+import { ErrorState, LoadingState, PageState } from '../../shared/models/PageState';
+import { Player } from '../../shared/types/PlayerStats';
+import PlayerIntro from './components/PlayerIntro';
+import { StatsMain } from './PlayerStats.styles';
 
 export default function PlayerStats() {
 
+    const [pageState, setPageState] = useState<PageState>(new LoadingState());
+
     let { platform, nickname } = useParams();
-    const [player, setPlayer] = useState<Global>();
+    const [player, setPlayer] = useState<Player | undefined>();
 
     useEffect(()=>{
         getPlayerStats();
@@ -16,20 +20,34 @@ export default function PlayerStats() {
 
     async function getPlayerStats() {
         
-        const response = await api.get(`/bridge?auth=${import.meta.env.VITE_APEX_KEY}&player=${nickname}&platform=${platform}`);
-        console.log(response.data);
-        setPlayer(response.data.global);
+        try {
+            
+            const response = await api.get(`/bridge?auth=${import.meta.env.VITE_APEX_KEY}&player=${nickname}&platform=${platform}`);
+            
+            if(response.data.Error) {throw new Error(response.data.error);}
+            
+            setPlayer(response.data.global);
+            
+
+        } catch (e) {
+            
+            let errorMessage:string;
+
+            if (e instanceof Error) {
+                errorMessage = e.message;
+            }
+            else {
+                errorMessage = e as string;
+            }
+
+            setPageState(new ErrorState(errorMessage));
+        }
     }
 
     return (
-        <MainContainer>
-            <PlayerInfoContainer>
-                <RankImage src={player?.rank.rankImg}/>
-                <PlayerColumn>
-                    <PlayerBigText>{player?.name}</PlayerBigText>
-                    <PlayerBigText>{player?.rank.rankName}</PlayerBigText>
-                </PlayerColumn>
-            </PlayerInfoContainer>
-        </MainContainer>
+        <StatsMain>
+            <PlayerIntro player={player}></PlayerIntro>
+            
+        </StatsMain>
     );
 }

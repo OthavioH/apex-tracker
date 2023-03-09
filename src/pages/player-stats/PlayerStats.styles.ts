@@ -1,5 +1,15 @@
 import styled from "styled-components";
 
+export const StatsMain = styled.main`
+    display: flex;
+    justify-content:start;
+    align-items:start;
+    padding-top: 20px;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+`;
+
 export const PlayerInfoContainer = styled.div`
     display: flex;
     flex-direction: row;

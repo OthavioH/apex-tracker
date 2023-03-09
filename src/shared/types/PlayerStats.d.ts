@@ -1,25 +1,25 @@
 export interface Bans {
     isActive: boolean;
     remainingSeconds: number;
-    last_banReason: string;
+    last_banReason: String;
 }
 
 export interface Rank {
     rankScore: number;
-    rankName: string;
+    rankName: String;
     rankDiv: number;
     ladderPosPlatform: number;
     rankImg: string;
-    rankedSeason: string;
+    rankedSeason: String;
 }
 
 export interface Arena {
     rankScore: number;
-    rankName: string;
+    rankName: String;
     rankDiv: number;
     ladderPosPlatform: number;
-    rankImg: string;
-    rankedSeason: string;
+    rankImg: String;
+    rankedSeason: String;
 }
 
 export interface History {
@@ -40,20 +40,20 @@ export interface History {
 }
 
 export interface Battlepass {
-    level: string;
+    level: String;
     history: History;
 }
 
 export interface Badge {
-    name: string;
+    name: String;
     value: number;
 }
 
-export interface Global {
-    name: string;
+export interface Player {
+    name: String;
     uid: number;
-    avatar: string;
-    platform: string;
+    avatar: String;
+    platform: String;
     level: number;
     toNextLevelPercent: number;
     internalUpdateCount: number;
@@ -67,57 +67,57 @@ export interface Global {
 }
 
 export interface Realtime {
-    lobbyState: string;
+    lobbyState: String;
     isOnline: number;
     isInGame: number;
     canJoin: number;
     partyFull: number;
-    selectedLegend: string;
-    currentState: string;
+    selectedLegend: String;
+    currentState: String;
     currentStateSinceTimestamp: number;
-    currentStateAsText: string;
+    currentStateAsText: String;
 }
 
 export interface Datum {
-    name: string;
+    name: String;
     value: number;
-    key: string;
+    key: String;
     global: boolean;
 }
 
 export interface Badge2 {
-    name: string;
+    name: String;
     value: number;
-    category: string;
+    category: String;
 }
 
 export interface GameInfo {
-    skin: string;
-    skinRarity: string;
-    frame: string;
-    frameRarity: string;
-    pose: string;
-    poseRarity: string;
-    intro: string;
-    introRarity: string;
+    skin: String;
+    skinRarity: String;
+    frame: String;
+    frameRarity: String;
+    pose: String;
+    poseRarity: String;
+    intro: String;
+    introRarity: String;
     badges: Badge2[];
 }
 
 export interface ImgAssets {
-    icon: string;
-    banner: string;
+    icon: String;
+    banner: String;
 }
 
 export interface Selected {
-    LegendName: string;
+    LegendName: String;
     data: Datum[];
     gameInfo: GameInfo;
     ImgAssets: ImgAssets;
 }
 
 export interface ImgAssets2 {
-    icon: string;
-    banner: string;
+    icon: String;
+    banner: String;
 }
 
 export interface Revenant {
@@ -125,8 +125,8 @@ export interface Revenant {
 }
 
 export interface ImgAssets3 {
-    icon: string;
-    banner: string;
+    icon: String;
+    banner: String;
 }
 
 export interface Crypto {
@@ -144,16 +144,16 @@ export interface RankPlatformSpecific {
 }
 
 export interface Datum2 {
-    name: string;
+    name: String;
     value: number;
-    key: string;
+    key: String;
     rank: Rank2;
     rankPlatformSpecific: RankPlatformSpecific;
 }
 
 export interface ImgAssets4 {
-    icon: string;
-    banner: string;
+    icon: String;
+    banner: String;
 }
 
 export interface Horizon {
@@ -162,8 +162,8 @@ export interface Horizon {
 }
 
 export interface ImgAssets5 {
-    icon: string;
-    banner: string;
+    icon: String;
+    banner: String;
 }
 
 export interface Gibraltar {
@@ -171,8 +171,8 @@ export interface Gibraltar {
 }
 
 export interface ImgAssets6 {
-    icon: string;
-    banner: string;
+    icon: String;
+    banner: String;
 }
 
 export interface Wattson {
@@ -190,15 +190,15 @@ export interface RankPlatformSpecific2 {
 }
 
 export interface Datum3 {
-    name: string;
+    name: String;
     value: number;
-    key: string;
+    key: String;
     rank: Rank3;
     rankPlatformSpecific: RankPlatformSpecific2;
 }
 
 export interface Badge3 {
-    name: string;
+    name: String;
     value: number;
 }
 
@@ -207,8 +207,8 @@ export interface GameInfo2 {
 }
 
 export interface ImgAssets7 {
-    icon: string;
-    banner: string;
+    icon: String;
+    banner: String;
 }
 
 export interface Fuse {
@@ -218,8 +218,8 @@ export interface Fuse {
 }
 
 export interface ImgAssets8 {
-    icon: string;
-    banner: string;
+    icon: String;
+    banner: String;
 }
 
 export interface Bangalore {
@@ -227,8 +227,8 @@ export interface Bangalore {
 }
 
 export interface ImgAssets9 {
-    icon: string;
-    banner: string;
+    icon: String;
+    banner: String;
 }
 
 export interface Wraith {
@@ -236,8 +236,8 @@ export interface Wraith {
 }
 
 export interface ImgAssets10 {
-    icon: string;
-    banner: string;
+    icon: String;
+    banner: String;
 }
 
 export interface Octane {
@@ -255,15 +255,15 @@ export interface RankPlatformSpecific3 {
 }
 
 export interface Datum4 {
-    name: string;
+    name: String;
     value: number;
-    key: string;
+    key: String;
     rank: Rank4;
     rankPlatformSpecific: RankPlatformSpecific3;
 }
 
 export interface Badge4 {
-    name: string;
+    name: String;
     value: number;
 }
 
@@ -272,8 +272,8 @@ export interface GameInfo3 {
 }
 
 export interface ImgAssets11 {
-    icon: string;
-    banner: string;
+    icon: String;
+    banner: String;
 }
 
 export interface Bloodhound {
@@ -283,8 +283,8 @@ export interface Bloodhound {
 }
 
 export interface ImgAssets12 {
-    icon: string;
-    banner: string;
+    icon: String;
+    banner: String;
 }
 
 export interface Caustic {
@@ -292,8 +292,8 @@ export interface Caustic {
 }
 
 export interface ImgAssets13 {
-    icon: string;
-    banner: string;
+    icon: String;
+    banner: String;
 }
 
 export interface Lifeline {
@@ -301,8 +301,8 @@ export interface Lifeline {
 }
 
 export interface ImgAssets14 {
-    icon: string;
-    banner: string;
+    icon: String;
+    banner: String;
 }
 
 export interface Pathfinder {
@@ -315,20 +315,20 @@ export interface Rank5 {
 }
 
 export interface RankPlatformSpecific4 {
-    rankPos: string;
-    topPercent: string;
+    rankPos: String;
+    topPercent: String;
 }
 
 export interface Datum5 {
-    name: string;
+    name: String;
     value: number;
-    key: string;
+    key: String;
     rank: Rank5;
     rankPlatformSpecific: RankPlatformSpecific4;
 }
 
 export interface Badge5 {
-    name: string;
+    name: String;
     value: number;
 }
 
@@ -337,8 +337,8 @@ export interface GameInfo4 {
 }
 
 export interface ImgAssets15 {
-    icon: string;
-    banner: string;
+    icon: String;
+    banner: String;
 }
 
 export interface Loba {
@@ -348,8 +348,8 @@ export interface Loba {
 }
 
 export interface ImgAssets16 {
-    icon: string;
-    banner: string;
+    icon: String;
+    banner: String;
 }
 
 export interface Mirage {
@@ -367,16 +367,16 @@ export interface RankPlatformSpecific5 {
 }
 
 export interface Datum6 {
-    name: string;
+    name: String;
     value: number;
-    key: string;
+    key: String;
     rank: Rank6;
     rankPlatformSpecific: RankPlatformSpecific5;
 }
 
 export interface ImgAssets17 {
-    icon: string;
-    banner: string;
+    icon: String;
+    banner: String;
 }
 
 export interface Rampart {
@@ -395,16 +395,16 @@ export interface RankPlatformSpecific6 {
 }
 
 export interface Datum7 {
-    name: string;
+    name: String;
     value: number;
-    key: string;
+    key: String;
     rank: Rank7;
     rankPlatformSpecific: RankPlatformSpecific6;
 }
 
 export interface ImgAssets18 {
-    icon: string;
-    banner: string;
+    icon: String;
+    banner: String;
 }
 
 export interface Valkyrie {
@@ -413,8 +413,8 @@ export interface Valkyrie {
 }
 
 export interface ImgAssets19 {
-    icon: string;
-    banner: string;
+    icon: String;
+    banner: String;
 }
 
 export interface Seer {
@@ -422,8 +422,8 @@ export interface Seer {
 }
 
 export interface ImgAssets20 {
-    icon: string;
-    banner: string;
+    icon: String;
+    banner: String;
 }
 
 export interface Ash {
@@ -431,8 +431,8 @@ export interface Ash {
 }
 
 export interface ImgAssets21 {
-    icon: string;
-    banner: string;
+    icon: String;
+    banner: String;
 }
 
 export interface MadMaggie {
@@ -440,8 +440,8 @@ export interface MadMaggie {
 }
 
 export interface ImgAssets22 {
-    icon: string;
-    banner: string;
+    icon: String;
+    banner: String;
 }
 
 export interface Newcastle {
@@ -459,16 +459,16 @@ export interface RankPlatformSpecific7 {
 }
 
 export interface Datum8 {
-    name: string;
+    name: String;
     value: number;
-    key: string;
+    key: String;
     rank: Rank8;
     rankPlatformSpecific: RankPlatformSpecific7;
 }
 
 export interface ImgAssets23 {
-    icon: string;
-    banner: string;
+    icon: String;
+    banner: String;
 }
 
 export interface Vantage {
@@ -477,15 +477,15 @@ export interface Vantage {
 }
 
 export interface ImgAssets24 {
-    icon: string;
-    banner: string;
+    icon: String;
+    banner: String;
 }
 
 export interface Catalyst {
     ImgAssets: ImgAssets24;
 }
 
-export interface All {
+export interface Legends {
     Revenant: Revenant;
     Crypto: Crypto;
     Horizon: Horizon;
@@ -523,11 +523,11 @@ export interface RateLimit {
 
 export interface MozambiquehereInternal {
     isNewToDB: boolean;
-    claimedBy: string;
-    APIAccessType: string;
-    ClusterID: string;
+    claimedBy: String;
+    APIAccessType: String;
+    ClusterID: String;
     rate_limit: RateLimit;
-    clusterSrv: string;
+    clusterSrv: String;
 }
 
 export interface ALS {
@@ -535,53 +535,53 @@ export interface ALS {
 }
 
 export interface Kills {
-    name: string;
+    name: String;
     value: number;
 }
 
 export interface TeammatesLifted {
-    name: string;
+    name: String;
     value: number;
 }
 
 export interface GamesPlayed {
-    name: string;
+    name: String;
     value: number;
 }
 
 export interface Top3 {
-    name: string;
+    name: String;
     value: number;
 }
 
 export interface KnuckleClusterHits {
-    name: string;
+    name: String;
     value: number;
 }
 
 export interface MotherlodeCaptured {
-    name: string;
+    name: String;
     value: number;
 }
 
 export interface SpecialEventKills {
-    name: string;
+    name: String;
     value: number;
 }
 
 export interface SpecialEventDamage {
-    name: string;
+    name: String;
     value: number;
 }
 
 export interface SpecialEventWins {
-    name: string;
+    name: String;
     value: number;
 }
 
 export interface Kd {
-    value: string;
-    name: string;
+    value: String;
+    name: String;
 }
 
 export interface Total {
@@ -597,8 +597,8 @@ export interface Total {
     kd: Kd;
 }
 
-export interface RootObject {
-    global: Global;
+export interface User {
+    global: Player;
     realtime: Realtime;
     legends: Legends;
     mozambiquehere_internal: MozambiquehereInternal;

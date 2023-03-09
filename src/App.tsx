@@ -1,8 +1,5 @@
 import { redirect, useNavigate } from 'react-router-dom';
-import api from './config/api';
-import { FormContainer, MainContainer, PlatformSelect,PlatformOption, PlayersNameInput, SubmitButton } from './styles/styles'
-
-import { Global } from './utils/types/PlayerStats';
+import { FormContainer, MainContainer, PlatformSelect,PlatformOption, PlayersNameInput, SubmitButton } from './shared/styles/styles'
 
 export default function App() {
   const navigate = useNavigate();
@@ -10,8 +7,8 @@ export default function App() {
   async function handleSubmit(event: any) {
     event.preventDefault();
     
-    const platform:string = event.target.platform.value;
-    const nickname:string = event.target.nickname.value;
+    const platform:String = event.target.platform.value;
+    const nickname:String = event.target.nickname.value;
 
     return navigate(`/player/${platform.toUpperCase()}/${nickname}`);
   }
