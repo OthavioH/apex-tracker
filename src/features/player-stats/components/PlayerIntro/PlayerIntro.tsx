@@ -36,6 +36,7 @@ export default function PlayerIntro({ user }: PlayerInfoProps) {
 const playerSectionStyle = {
   display: "flex",
   height: "fit-content",
+  flexWrap: "wrap",
   flexDirection: "row",
   alignItems: "flex-start",
   justifyContent: "space-between",

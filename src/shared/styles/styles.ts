@@ -1,12 +1,12 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const MainContainer = styled.main`
   display: flex;
-  justify-content:center;
-  align-items:center;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
   height: 100vh;
   width: 100vw;
-  position: absolute;
 `;
 
 export const FormContainer = styled.form`
@@ -20,7 +20,7 @@ export const FormContainer = styled.form`
 `;
 
 export const PlayersNameInput = styled.input.attrs({
-  placeholderTextColor: "white"
+  placeholderTextColor: "white",
 })`
   background: transparent;
   width: 100%;
@@ -35,15 +35,16 @@ export const PlayersNameInput = styled.input.attrs({
     color: rgb(255, 255, 255, 0.5);
   }
 
-  :active, :focus {
+  :active,
+  :focus {
     border: 4px solid white;
   }
-`
+`;
 
 export const PlatformSelect = styled.select`
   background: transparent;
   width: 30%;
-  height: 50px; 
+  height: 50px;
   color: white;
   border: 4px solid red;
   border-radius: 10px;

@@ -11,12 +11,23 @@ export const GlobalStyles = createGlobalStyle`
     body {
         font-family: "Kanit", sans-serif;
         font-size: 14px;
-        background: linear-gradient(-80deg, #8B0000 0%, #0f0f0f 20%);;
+        background: linear-gradient(-80deg, #8B0000 0%, var(--primary) 20%);;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
     }
 
-    html, body, #root {
+    html, body, :root {
         height: 100%;
+    }
+    
+    :root {
+        --primary: #0f0f0f;
+        --accent-color: #b30000;
+        --hover-accent-color: #870000;
+
+        --primary-text-color: #ffffff;
+        --accent-text-color: #e30202;
+
+        --default-page-padding: 20px;
     }
 `;
