@@ -11,7 +11,7 @@ export const GlobalStyles = createGlobalStyle`
     body {
         font-family: "Kanit", sans-serif;
         font-size: 14px;
-        background: linear-gradient(-80deg, #8B0000 0%, var(--primary) 20%);;
+        background: var(--background-color);
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
     }
@@ -22,6 +22,7 @@ export const GlobalStyles = createGlobalStyle`
     
     :root {
         --primary: #0f0f0f;
+        --background-color: #0f0f0f;
         --accent-color: #b30000;
         --hover-accent-color: #870000;
 

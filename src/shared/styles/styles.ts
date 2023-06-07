@@ -5,8 +5,10 @@ export const MainContainer = styled.main`
   flex-direction: column;
   justify-content: start;
   align-items: start;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
+
+  padding: 0 var(--default-page-padding);
 `;
 
 export const FormContainer = styled.form`

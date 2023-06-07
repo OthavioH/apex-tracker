@@ -3,15 +3,10 @@ import PlayerNickname from "./PlayerNickname";
 import {
   Divider,
   GiantText,
-  PlayerBigText,
   PlayerColumn,
-  SingleInfoContainer,
-  PlayerSection,
   PlayerSmallText,
-  RankImage,
   Row,
   MultipleInfoContainer,
-  PlayerName,
 } from "../../../PlayerStats.styles";
 import LevelInfo from "./LevelInfo";
 
@@ -25,12 +20,12 @@ export default function PlayerMainInfo({
   return (
     <PlayerColumn
       style={{
-        flex: 1,
-        justifyContent: "flex-end",
-        height: "100%",
+        justifyContent: "center",
       }}
     >
-      <PlayerNickname nickname={player.name as string} />
+      <Row>
+        <PlayerNickname nickname={player.name as string} />
+      </Row>
       <LevelInfo level={player.level} rankImg={player.rank.rankImg} />
       <Row>
         <MultipleInfoContainer style={{ flexDirection: "row" }}>

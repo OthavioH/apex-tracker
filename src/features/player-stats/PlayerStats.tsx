@@ -10,7 +10,6 @@ import {
 } from "../../shared/models/PageState";
 import { User } from "../../shared/types/PlayerStats";
 import PlayerIntro from "./components/PlayerIntro/PlayerIntro";
-import { StatsMain } from "./PlayerStats.styles";
 
 export default function PlayerStats() {
   const [pageState, setPageState] = useState<PageState>(new LoadingState());
@@ -20,7 +19,7 @@ export default function PlayerStats() {
 
   useEffect(() => {
     getPlayerStats();
-  }, []);
+  }, [platform, nickname]);
 
   async function getPlayerStats() {
     try {
@@ -55,15 +54,7 @@ export default function PlayerStats() {
   if (pageState instanceof ErrorState)
     return <h1 style={errorStyle}>{pageState.message}</h1>;
 
-  return (
-    <StatsMain
-      style={{
-        backgroundImage: `url(${user!.legends.selected.ImgAssets.banner})`,
-      }}
-    >
-      <PlayerIntro user={user}></PlayerIntro>
-    </StatsMain>
-  );
+  return <PlayerIntro user={user}></PlayerIntro>;
 }
 
 const errorStyle = {

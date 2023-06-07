@@ -1,22 +1,8 @@
 import styled from "styled-components";
 
-export const StatsMain = styled.main`
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  padding-top: 20px;
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  background-size: cover;
-  background-repeat: no-repeat;
-`;
-
 export const SingleInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: start;
   align-items: center;
   padding: 10px 15px;
   border-radius: 15px;
@@ -49,8 +35,8 @@ export const PlayerSection = styled.section`
   flex-direction: column;
   justify-content: start;
   align-items: start;
-  width: 100vw;
-  height: 60vh;
+  width: 100%;
+  height: 100%;
   font-family: "Kanit";
 `;
 
