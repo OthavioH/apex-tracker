@@ -13,8 +13,6 @@ export default function SearchPlayer() {
   const [platform, setPlatform] = useState<Platform>(new Platform("PC"));
 
   async function handleSubmit(event: any) {
-    console.log(event.target[0]);
-
     event.preventDefault();
 
     const nickname: String = event.target[1].value;

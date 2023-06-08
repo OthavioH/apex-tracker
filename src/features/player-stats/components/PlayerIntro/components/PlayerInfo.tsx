@@ -17,6 +17,9 @@ export default function PlayerMainInfo({
   player: Player;
   total: Total;
 }) {
+  console.log(total);
+  console.log(player);
+
   return (
     <PlayerColumn
       style={{
@@ -32,17 +35,17 @@ export default function PlayerMainInfo({
           <PlayerColumn>
             <PlayerSmallText>BR Kills</PlayerSmallText>
             <Divider />
-            <GiantText>{total.kills.value}</GiantText>
+            <GiantText>{total.kills?.value || 0}</GiantText>
           </PlayerColumn>
           <PlayerColumn>
             <PlayerSmallText>K/D</PlayerSmallText>
             <Divider />
-            <GiantText>{total.kd.value}</GiantText>
+            <GiantText>{total.kd?.value || 0}</GiantText>
           </PlayerColumn>
           <PlayerColumn>
             <PlayerSmallText>BR Games</PlayerSmallText>
             <Divider />
-            <GiantText>{total.games_played.value}</GiantText>
+            <GiantText>{total.games_played?.value || 0}</GiantText>
           </PlayerColumn>
         </MultipleInfoContainer>
       </Row>

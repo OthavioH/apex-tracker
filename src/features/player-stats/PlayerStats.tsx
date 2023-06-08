@@ -10,6 +10,7 @@ import {
 } from "../../shared/models/PageState";
 import { User } from "../../shared/types/PlayerStats";
 import PlayerIntro from "./components/PlayerIntro/PlayerIntro";
+import { AxiosError } from "axios";
 
 export default function PlayerStats() {
   const [pageState, setPageState] = useState<PageState>(new LoadingState());
@@ -18,6 +19,7 @@ export default function PlayerStats() {
   const [user, setUser] = useState<User>();
 
   useEffect(() => {
+    setPageState(new LoadingState());
     getPlayerStats();
   }, [platform, nickname]);
 
@@ -38,8 +40,8 @@ export default function PlayerStats() {
     } catch (e) {
       let errorMessage: string;
 
-      if (e instanceof Error) {
-        errorMessage = e.message;
+      if (e instanceof AxiosError) {
+        errorMessage = e.response?.data.Error;
       } else {
         errorMessage = e as string;
       }
