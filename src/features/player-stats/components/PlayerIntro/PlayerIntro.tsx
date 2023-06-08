@@ -27,7 +27,7 @@ export default function PlayerIntro({ user }: PlayerInfoProps) {
 
   return (
     <PlayerSection style={playerSectionStyle}>
-      {/* <SelectedLegend legend={user!.legends.selected} /> */}
+      <SelectedLegend legend={user!.legends.selected} />
       <PlayerMainInfo player={player!} total={total!} />
     </PlayerSection>
   );
