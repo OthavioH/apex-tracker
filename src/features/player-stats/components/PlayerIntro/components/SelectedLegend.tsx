@@ -3,6 +3,7 @@ import {
   GiantText,
   PlayerBigText,
   PlayerColumn,
+  SelectedLegendImage,
 } from "../../../PlayerStats.styles";
 
 export default function SelectedLegend({ legend }: { legend: Selected }) {
@@ -12,20 +13,10 @@ export default function SelectedLegend({ legend }: { legend: Selected }) {
         flex: 1,
       }}
     >
-      <img
+      <SelectedLegendImage
         loading="lazy"
         src={legend.ImgAssets.icon as string}
         alt={`${legend.LegendName} from Apex Legends`}
-        style={{
-          aspectRatio: "1/1",
-          width: "100%",
-          minWidth: "200px",
-          minHeight: "200px",
-          height: "auto",
-          display: "block",
-          objectFit: "cover",
-          objectPosition: "center",
-        }}
       />
     </PlayerColumn>
   );

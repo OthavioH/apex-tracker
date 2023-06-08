@@ -1,21 +1,32 @@
 import capitalize from "../../../../../shared/utils/capitalize";
 import {
   Divider,
+  InfoRow,
   PlayerColumn,
   PlayerName,
   PlayerSmallText,
+  RankImage,
   SingleInfoContainer,
 } from "../../../PlayerStats.styles";
 
-export default function PlayerNickname(params: { nickname: string }) {
+export default function PlayerNickname(params: {
+  nickname: string;
+  rankImg: string;
+}) {
   return (
     <SingleInfoContainer>
       <PlayerColumn>
-        <PlayerSmallText>Nickname</PlayerSmallText>
+        <PlayerSmallText>Player</PlayerSmallText>
         <Divider />
-        <PlayerName style={playerNameStyle}>
-          {capitalize(params.nickname)}
-        </PlayerName>
+        <InfoRow>
+          <PlayerColumn>
+            <RankImage src={params.rankImg} />
+            <PlayerSmallText style={playerNameStyle}>Rookie</PlayerSmallText>
+          </PlayerColumn>
+          <PlayerName style={playerNameStyle}>
+            {capitalize(params.nickname)}
+          </PlayerName>
+        </InfoRow>
       </PlayerColumn>
     </SingleInfoContainer>
   );

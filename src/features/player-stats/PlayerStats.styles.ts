@@ -48,7 +48,7 @@ export const PlayerBigText = styled.h1`
 
 export const PlayerName = styled.h1`
   color: white;
-  font-size: 4rem;
+  font-size: 2rem;
   font-weight: 600;
   text-shadow: 0 0 1px #000, 0 0 2px #000, 0 0 3px #000, 0 0 4px #000;
 `;
@@ -79,6 +79,14 @@ export const PlayerColumn = styled.div`
   gap: 10px;
 `;
 
+export const InfoRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+`;
+
 export const RankImage = styled.img`
   width: 100px;
   height: 100px;
@@ -92,4 +100,16 @@ export const Row = styled.div`
   width: 100%;
   justify-content: start;
   gap: 10px;
+`;
+
+export const SelectedLegendImage = styled.img`
+  aspect-ratio: 1/1;
+  width: 100%;
+  min-width: 200px;
+  max-width: 460px;
+  height: auto;
+
+  display: block;
+  object-fit: cover;
+  object-position: center;
 `;

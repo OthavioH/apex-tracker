@@ -27,7 +27,10 @@ export default function PlayerMainInfo({
       }}
     >
       <Row>
-        <PlayerNickname nickname={player.name as string} />
+        <PlayerNickname
+          nickname={player.name as string}
+          rankImg={player.rank.rankImg}
+        />
       </Row>
       <LevelInfo level={player.level} rankImg={player.rank.rankImg} />
       <Row>
