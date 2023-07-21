@@ -43,6 +43,10 @@ export const PlayersNameInput = styled.input.attrs({
   }
 `;
 
+export const MainText = styled.h1`
+  color: var(--primary-text-color);
+`;
+
 export const PlatformSelect = styled.select`
   background: transparent;
   width: 30%;
