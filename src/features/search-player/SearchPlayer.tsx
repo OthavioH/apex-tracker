@@ -31,8 +31,6 @@ export default function SearchPlayer() {
   }
 
   function handlePlatformChange(event: any) {
-    console.log(event.target.value);
-
     const newPlatformState = new Platform(event.target.value);
 
     setPlatform(newPlatformState);
@@ -43,6 +41,7 @@ export default function SearchPlayer() {
     <SearchForm onSubmit={handleSubmit}>
       <PlayerPlatformDropdown
         id="player-platform"
+        name="search_player_platform"
         onChange={(e) => handlePlatformChange(e)}
         value={platform.platformId}
       >
@@ -57,7 +56,7 @@ export default function SearchPlayer() {
         type="search"
         value={player}
         onChange={(event) => setPlayer(event.target.value)}
-        placeholder="Search by Player (Origin Username)"
+        placeholder={`Search Player (${platform.platformIdToPlaceHolder()} Username)`}
       />
     </SearchForm>
   );

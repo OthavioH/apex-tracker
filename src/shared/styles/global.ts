@@ -17,7 +17,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     html, body, :root {
-        height: 100%;
+        min-height: 100vh;
     }
     
     :root {
@@ -30,5 +30,13 @@ export const GlobalStyles = createGlobalStyle`
         --accent-text-color: #e30202;
 
         --default-page-padding: 20px;
+
+        --big-title-size: 100px;
+        --mobile-big-title-size: 55px;
+
     }
 `;
+
+export const mobileBreakpoint = "600px";
+export const tabletBreakpoint = "768px";
+export const desktopBreakpoint = "1024px";

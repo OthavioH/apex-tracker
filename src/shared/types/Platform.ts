@@ -21,6 +21,21 @@ export default class Platform extends String {
     }
   }
 
+  platformIdToPlaceHolder(): string {
+    switch (this.platformId) {
+      case "PC":
+        return "Origin";
+      case "PS4":
+        return "PSN";
+      case "X1":
+        return "Xbox";
+      case "SWITCH":
+        return "Nintendo";
+      default:
+        return "Origin";
+    }
+  }
+
   toDropdownWidth(): string {
     switch (this.platformId) {
       case "X1":

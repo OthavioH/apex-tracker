@@ -1,16 +1,5 @@
 import styled from "styled-components";
 
-export const MainContainer = styled.main`
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  height: 100%;
-  width: 100%;
-
-  padding: 0 var(--default-page-padding);
-`;
-
 export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mobileBreakpoint } from "../../shared/styles/global";
 
 export const SearchForm = styled.form`
   display: flex;
@@ -43,5 +44,10 @@ export const SearchContainer = styled.input`
 
   ::placeholder {
     color: gray;
+  }
+
+  @media screen and (max-width: ${mobileBreakpoint}) {
+    min-width: 20px;
+    width: 100%;
   }
 `;
