@@ -17,9 +17,6 @@ export default function PlayerMainInfo({
   player: Player;
   total: Total;
 }) {
-  console.log(total);
-  console.log(player);
-
   return (
     <PlayerColumn
       style={{

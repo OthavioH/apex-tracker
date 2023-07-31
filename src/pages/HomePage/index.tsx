@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { MainText } from "../../shared/styles/styles";
 import {
   MainContainer,
@@ -17,21 +17,13 @@ import { useNavigate } from "react-router-dom";
 export default function HomePage() {
   const navigate = useNavigate();
   const [isFocused, setIsFocused] = useState(false);
-  const [platform, setPlatform] = useState<Platform>(new Platform("PC"));
-  const [username, setUsername] = useState("");
 
-  function handlePlatformChange(event: any) {
-    const newPlatformState = new Platform(event.target.value);
-
-    setPlatform(newPlatformState);
-    resizeDropdown(newPlatformState);
-  }
+  const userRef = useRef<any>();
+  const platformRef = useRef<any>();
 
   function resizeDropdown(newPlatformState: Platform) {
     const dropdown = document.getElementById("player-platform");
     if (dropdown) {
-      console.log(newPlatformState.platformIdToString().length);
-
       dropdown.style.width = newPlatformState.toDropdownWidth();
     }
   }
@@ -39,9 +31,16 @@ export default function HomePage() {
   function handleSubtmit(event: any) {
     event.preventDefault();
 
-    const nickname: String = event.target[1].value;
+    if (userRef.current) {
+      const nickname: String = userRef.current.value;
+      const platform = new Platform(platformRef.current!.value);
 
-    return navigate(`/player/${platform.platformId}/${nickname}`);
+      return navigate(`/player/${platform.platformId}/${nickname}`);
+    }
+  }
+
+  function changeInputFocused(value: boolean) {
+    setIsFocused((_) => value);
   }
 
   return (
@@ -55,8 +54,10 @@ export default function HomePage() {
           <PlatformSearchingSelect
             id="player-platform"
             name="search_player_platform"
-            onChange={(e) => handlePlatformChange(e)}
-            value={platform.platformId}
+            onChange={(event) => {
+              resizeDropdown(new Platform(event.target.value));
+            }}
+            ref={platformRef}
           >
             <option value="PC">PC</option>
             <option value="X1">Xbox</option>
@@ -75,11 +76,10 @@ export default function HomePage() {
               id="search-player-input"
               name="search-player-input"
               placeholder="Search for a player..."
-              value={username}
-              onChange={(event) => setUsername(event.target.value)}
+              ref={userRef}
               min={1}
-              onFocus={() => setIsFocused(true)}
-              onBlur={() => setIsFocused(false)}
+              onFocus={() => changeInputFocused(true)}
+              onBlur={() => changeInputFocused(false)}
             />
           </SearchInputWrapper>
         </PlatformPlayerSearchingWrapper>

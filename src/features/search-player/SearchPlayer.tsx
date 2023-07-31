@@ -24,8 +24,6 @@ export default function SearchPlayer() {
   function resizeDropdown(newPlatformState: Platform) {
     const dropdown = document.getElementById("player-platform");
     if (dropdown) {
-      console.log(newPlatformState.platformIdToString().length);
-
       dropdown.style.width = newPlatformState.toDropdownWidth();
     }
   }
