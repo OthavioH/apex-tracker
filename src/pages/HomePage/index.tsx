@@ -72,7 +72,7 @@ export default function HomePage() {
               }
             />
             <SearchInput
-              type="text"
+              type="search"
               id="search-player-input"
               name="search-player-input"
               placeholder="Search for a player..."

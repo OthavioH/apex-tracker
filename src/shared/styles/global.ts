@@ -16,7 +16,7 @@ export const GlobalStyles = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
     }
 
-    html, body, :root {
+    html, body {
         min-height: 100vh;
     }
     
