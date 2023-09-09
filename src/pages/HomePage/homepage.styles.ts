@@ -9,7 +9,7 @@ export const MainContainer = styled.div`
 `;
 
 export const BackgroundContainer = styled.img`
-  max-height: 100vh;
+  height: 100vh;
   width: 100%;
   position: relative;
   object-fit: cover;

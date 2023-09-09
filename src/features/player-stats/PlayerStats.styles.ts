@@ -1,5 +1,26 @@
 import styled from "styled-components";
 
+export const PlayerStatsBackground = styled.img`
+  display: flex;
+  min-height: 94vh;
+  min-width: 100vw;
+  position: relative;
+
+  object-fit: fill;
+  overflow: hidden;
+  object-position: center;
+
+  filter: blur(5px) saturate(100%) brightness(80%) contrast(100%);
+`;
+
+export const InfoWrapper = styled.div`
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  width: 100%;
+  padding-right: 10rem;
+`;
+
 export const SingleInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -31,12 +52,15 @@ export const MultipleInfoContainer = styled.div`
 `;
 
 export const PlayerSection = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
   width: 100%;
-  height: 100%;
+  height: fit-content;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
   font-family: "Kanit";
 `;
 

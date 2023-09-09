@@ -1,20 +1,13 @@
+import { useEffect, useState } from "react";
+import useStatsBackground from "../../../../shared/hooks/useStatsBackground";
 import { Player, User } from "../../../../shared/types/PlayerStats";
 import capitalize from "../../../../shared/utils/capitalize";
 import {
-  Divider,
-  GiantText,
-  PlayerBigText,
-  PlayerColumn,
-  SingleInfoContainer,
+  InfoWrapper,
   PlayerSection,
-  PlayerSmallText,
-  RankImage,
-  Row,
-  MultipleInfoContainer,
-  PlayerName,
+  PlayerStatsBackground,
 } from "../../PlayerStats.styles";
 import PlayerMainInfo from "./components/PlayerInfo";
-import PlayerNickname from "./components/PlayerNickname";
 import SelectedLegend from "./components/SelectedLegend";
 
 interface PlayerInfoProps {
@@ -25,20 +18,22 @@ export default function PlayerIntro({ user }: PlayerInfoProps) {
   const player = user?.global;
   const total = user?.total;
 
+  const [statsBackground, setStatsBackground] = useState<string>("");
+  const statsBackgroundResponse = useStatsBackground(user!);
+
+  useEffect(() => {
+    statsBackgroundResponse.then((response) => {
+      setStatsBackground(response);
+    });
+  }, []);
+
   return (
-    <PlayerSection style={playerSectionStyle}>
-      <SelectedLegend legend={user!.legends.selected} />
-      <PlayerMainInfo player={player!} total={total!} />
+    <PlayerSection>
+      <PlayerStatsBackground src={statsBackground} />
+      <InfoWrapper>
+        <SelectedLegend legend={user!.legends.selected} />
+        <PlayerMainInfo player={player!} total={total!} />
+      </InfoWrapper>
     </PlayerSection>
   );
 }
-
-const playerSectionStyle = {
-  display: "flex",
-  height: "fit-content",
-  flexWrap: "wrap",
-  flexDirection: "row",
-  alignItems: "flex-start",
-  justifyContent: "space-between",
-  paddingRight: "10rem",
-} as const;
