@@ -4,13 +4,12 @@ import { Search } from "lucide-react";
 
 export const MainContainer = styled.div`
   display: flex;
-  height: 100%;
   width: 100%;
   flex-direction: column;
 `;
 
 export const BackgroundContainer = styled.img`
-  min-height: 100vh;
+  max-height: 100vh;
   width: 100%;
   position: relative;
   object-fit: cover;

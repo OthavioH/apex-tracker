@@ -10,12 +10,16 @@ export default function Nav() {
     navigate(`/`);
   }
 
+  if (location.pathname === "/") {
+    return null;
+  }
+
   return (
     <NavContainer>
       <NavTitle onClick={redirectHome}>
         Apex<HighlightedTitle>Tracker</HighlightedTitle>
       </NavTitle>
-      {location.pathname !== "/" && <SearchPlayer />}
+      <SearchPlayer />
     </NavContainer>
   );
 }
