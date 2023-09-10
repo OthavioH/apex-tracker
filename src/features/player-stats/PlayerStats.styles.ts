@@ -2,10 +2,9 @@ import styled from "styled-components";
 import { mobileBreakpoint, tabletBreakpoint } from "../../shared/styles/global";
 
 export const PlayerStatsBackground = styled.img`
-  min-height: 94vh;
+  min-height: 100vh;
   height: 100%;
   width: 100%;
-  position: relative;
 
   object-fit: fill;
   object-position: center;
@@ -74,17 +73,28 @@ export const MultipleInfoContainer = styled.div`
 
 export const PlayerSection = styled.section`
   width: 100%;
-  min-height: 94vh;
+  min-height: 100vh;
   height: fit-content;
 
   position: relative;
   display: flex;
 
-  flex-direction: colmun;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   justify-content: flex-start;
+  flex-wrap: wrap;
+  padding-right: 5rem;
+  padding-bottom: 1rem;
+
+  @media screen and (max-width: ${tabletBreakpoint}) {
+    padding-right: 0;
+  }
 
   font-family: "Kanit";
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 
   @media screen and (max-width: ${mobileBreakpoint}) {
     padding-bottom: 10px;

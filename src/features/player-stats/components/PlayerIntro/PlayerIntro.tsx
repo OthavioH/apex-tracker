@@ -31,15 +31,12 @@ export default function PlayerIntro({ user }: PlayerInfoProps) {
   }, []);
 
   return (
-    <PlayerSection>
-      <PlayerStatsBackground src={statsBackground} />
-      <InfoWrapper>
-        <PlayerName player={player!} />
-        <FlexRow>
-          <SelectedLegend legend={user!.legends.selected} />
-          <PlayerStats player={player!} total={total!} />
-        </FlexRow>
-      </InfoWrapper>
+    <PlayerSection style={{ backgroundImage: `url(${statsBackground})` }}>
+      <PlayerName player={player!} />
+      <FlexRow>
+        <SelectedLegend legend={user!.legends.selected} />
+        <PlayerStats player={player!} total={total!} />
+      </FlexRow>
     </PlayerSection>
   );
 }
