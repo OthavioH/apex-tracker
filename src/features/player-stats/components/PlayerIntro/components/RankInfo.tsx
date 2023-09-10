@@ -1,10 +1,8 @@
 import capitalize from "../../../../../shared/utils/capitalize";
 import {
   Divider,
-  GiantText,
   InfoRow,
   PlayerColumn,
-  PlayerName,
   PlayerSmallText,
   RankImage,
   SingleInfoContainer,

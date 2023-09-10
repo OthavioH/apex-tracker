@@ -1,6 +1,5 @@
+import { GiantText } from "../../../../../shared/styles/styles";
 import {
-  Divider,
-  GiantText,
   PlayerColumn,
   PlayerSmallText,
   RankImage,

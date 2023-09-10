@@ -2,13 +2,13 @@ import { Player, Total } from "../../../../../shared/types/PlayerStats";
 import RankInfo from "./RankInfo";
 import {
   Divider,
-  GiantText,
   PlayerColumn,
   PlayerSmallText,
   Row,
   MultipleInfoContainer,
 } from "../../../PlayerStats.styles";
 import LevelInfo from "./LevelInfo";
+import { GiantText } from "../../../../../shared/styles/styles";
 
 export default function PlayerStats({
   player,

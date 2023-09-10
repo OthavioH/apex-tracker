@@ -11,6 +11,7 @@ import {
 import { User } from "../../shared/types/PlayerStats";
 import PlayerIntro from "./components/PlayerIntro/PlayerIntro";
 import { AxiosError } from "axios";
+import Loading from "./components/Loading/Loading";
 
 export default function PlayerStatsScreen() {
   const [pageState, setPageState] = useState<PageState>(new LoadingState());
@@ -35,7 +36,7 @@ export default function PlayerStatsScreen() {
         throw new Error(response.data.Error);
       }
 
-      setPageState(new SuccessState());
+      setPageState(new LoadingState());
       setUser(response.data);
     } catch (e) {
       let errorMessage: string;
@@ -51,7 +52,11 @@ export default function PlayerStatsScreen() {
   }
 
   if (pageState instanceof LoadingState)
-    return <h1 style={errorStyle}>Loading...</h1>;
+    return (
+      <h1 style={errorStyle}>
+        <Loading />
+      </h1>
+    );
 
   if (pageState instanceof ErrorState)
     return <h1 style={errorStyle}>{pageState.message}</h1>;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mobileBreakpoint } from "./global";
 
 export const FormContainer = styled.form`
   display: flex;
@@ -45,6 +46,26 @@ export const PlatformSelect = styled.select`
   border-radius: 10px;
   backdrop-filter: blur(10px);
   padding: 10px;
+`;
+
+export const GiantText = styled.p`
+  color: white;
+  font-size: var(--giant-text-size);
+  font-weight: 600;
+
+  @media screen and (max-width: ${mobileBreakpoint}) {
+    font-size: var(--mobile-giant-text-size);
+  }
+`;
+
+export const BigText = styled.h1`
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+
+  @media screen and (max-width: ${mobileBreakpoint}) {
+    font-size: 1.6rem;
+  }
 `;
 
 export const PlatformOption = styled.option`

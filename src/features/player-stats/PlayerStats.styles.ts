@@ -91,12 +91,6 @@ export const PlayerSection = styled.section`
   }
 `;
 
-export const PlayerBigText = styled.h1`
-  color: white;
-  font-size: 2rem;
-  font-weight: 600;
-`;
-
 export const PlayerName = styled.h1`
   color: white;
   font-size: 2rem;
@@ -105,16 +99,6 @@ export const PlayerName = styled.h1`
 
   @media screen and (max-width: ${mobileBreakpoint}) {
     font-size: var(--mobile-big-title-size);
-  }
-`;
-
-export const GiantText = styled.p`
-  color: white;
-  font-size: var(--giant-text-size);
-  font-weight: 600;
-
-  @media screen and (max-width: ${mobileBreakpoint}) {
-    font-size: var(--mobile-giant-text-size);
   }
 `;
 

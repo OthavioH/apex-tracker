@@ -1,10 +1,5 @@
 import { Selected } from "../../../../../shared/types/PlayerStats";
-import {
-  GiantText,
-  PlayerBigText,
-  PlayerColumn,
-  SelectedLegendImage,
-} from "../../../PlayerStats.styles";
+import { PlayerColumn, SelectedLegendImage } from "../../../PlayerStats.styles";
 
 export default function SelectedLegend({ legend }: { legend: Selected }) {
   return (
