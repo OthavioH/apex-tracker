@@ -2,10 +2,11 @@ import { Player, Total } from "../../../../../shared/types/PlayerStats";
 import RankInfo from "./RankInfo";
 import {
   Divider,
-  PlayerColumn,
+  RankColumn,
   PlayerSmallText,
   Row,
   MultipleInfoContainer,
+  PlayerColumn,
 } from "../../../PlayerStats.styles";
 import LevelInfo from "./LevelInfo";
 import { GiantText } from "../../../../../shared/styles/styles";
@@ -19,7 +20,7 @@ export default function PlayerStats({
 }) {
   const kd = +total.kd?.value;
   return (
-    <PlayerColumn
+    <RankColumn
       style={{
         justifyContent: "center",
       }}
@@ -51,6 +52,6 @@ export default function PlayerStats({
           </PlayerColumn>
         </MultipleInfoContainer>
       </Row>
-    </PlayerColumn>
+    </RankColumn>
   );
 }

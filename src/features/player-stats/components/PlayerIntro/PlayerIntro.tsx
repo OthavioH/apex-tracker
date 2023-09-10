@@ -3,15 +3,20 @@ import useStatsBackground from "../../../../shared/hooks/useStatsBackground";
 import { Player, User } from "../../../../shared/types/PlayerStats";
 import capitalize from "../../../../shared/utils/capitalize";
 import {
+  Divider,
   FlexRow,
-  InfoWrapper,
+  PlayerColumn,
   PlayerSection,
+  PlayerSmallText,
   PlayerStatsBackground,
   Row,
+  SingleInfoContainer,
 } from "../../PlayerStats.styles";
 import PlayerStats from "./components/PlayerStats";
 import SelectedLegend from "./components/SelectedLegend";
 import PlayerName from "./components/PlayerName";
+import { GiantText } from "../../../../shared/styles/styles";
+import SelectedBanner from "./components/SelectedBanner";
 
 interface PlayerInfoProps {
   user: User | undefined;
@@ -20,6 +25,7 @@ interface PlayerInfoProps {
 export default function PlayerIntro({ user }: PlayerInfoProps) {
   const player = user?.global;
   const total = user?.total;
+  const selectedLegend = user?.legends.selected;
 
   const [statsBackground, setStatsBackground] = useState<string>("");
   const statsBackgroundResponse = useStatsBackground(user!);
@@ -31,11 +37,23 @@ export default function PlayerIntro({ user }: PlayerInfoProps) {
   }, []);
 
   return (
-    <PlayerSection style={{ backgroundImage: `url(${statsBackground})` }}>
+    <PlayerSection
+      style={{ backgroundImage: `url(${statsBackground})`, gap: "18px" }}
+    >
       <PlayerName player={player!} />
       <FlexRow>
-        <SelectedLegend legend={user!.legends.selected} />
-        <PlayerStats player={player!} total={total!} />
+        {selectedLegend && <SelectedLegend legend={selectedLegend} />}
+        {player && total && <PlayerStats player={player} total={total} />}
+      </FlexRow>
+      <FlexRow style={{ justifyContent: "center", gap: "18px" }}>
+        {selectedLegend &&
+          selectedLegend.data.map((selectedBanner, index) => (
+            <SelectedBanner
+              name={selectedBanner.name as string}
+              value={selectedBanner.value}
+              key={index}
+            />
+          ))}
       </FlexRow>
     </PlayerSection>
   );

@@ -12,21 +12,6 @@ export const PlayerStatsBackground = styled.img`
   filter: blur(5px) saturate(100%) brightness(80%) contrast(100%);
 `;
 
-export const InfoWrapper = styled.div`
-  display: flex;
-  width: 100%;
-  position: absolute;
-  flex-direction: column;
-  padding-right: 5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-
-  @media screen and (max-width: ${tabletBreakpoint}) {
-    padding-right: 0;
-  }
-`;
-
 export const FlexRow = styled.div`
   display: flex;
   flex-direction: row;
@@ -44,6 +29,7 @@ export const FlexRow = styled.div`
 export const SingleInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
+  min-width: 150px;
   align-items: center;
   padding: 10px 15px;
   border-radius: 15px;
@@ -83,7 +69,6 @@ export const PlayerSection = styled.section`
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
-  padding-right: 5rem;
   padding-bottom: 1rem;
 
   @media screen and (max-width: ${tabletBreakpoint}) {
@@ -133,6 +118,20 @@ export const PlayerColumn = styled.div`
 
   @media screen and (max-width: ${tabletBreakpoint}) {
     width: 100%;
+  }
+`;
+
+export const RankColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  padding-right: 6rem;
+
+  @media screen and (max-width: ${tabletBreakpoint}) {
+    width: 100%;
+    padding-right: 0;
   }
 `;
 
