@@ -3,12 +3,15 @@ import useStatsBackground from "../../../../shared/hooks/useStatsBackground";
 import { Player, User } from "../../../../shared/types/PlayerStats";
 import capitalize from "../../../../shared/utils/capitalize";
 import {
+  FlexRow,
   InfoWrapper,
   PlayerSection,
   PlayerStatsBackground,
+  Row,
 } from "../../PlayerStats.styles";
-import PlayerMainInfo from "./components/PlayerInfo";
+import PlayerStats from "./components/PlayerStats";
 import SelectedLegend from "./components/SelectedLegend";
+import PlayerName from "./components/PlayerName";
 
 interface PlayerInfoProps {
   user: User | undefined;
@@ -31,8 +34,11 @@ export default function PlayerIntro({ user }: PlayerInfoProps) {
     <PlayerSection>
       <PlayerStatsBackground src={statsBackground} />
       <InfoWrapper>
-        <SelectedLegend legend={user!.legends.selected} />
-        <PlayerMainInfo player={player!} total={total!} />
+        <PlayerName player={player!} />
+        <FlexRow>
+          <SelectedLegend legend={user!.legends.selected} />
+          <PlayerStats player={player!} total={total!} />
+        </FlexRow>
       </InfoWrapper>
     </PlayerSection>
   );

@@ -11,7 +11,7 @@ import {
 } from "../../../PlayerStats.styles";
 import LevelInfo from "./LevelInfo";
 
-export default function PlayerNickname(params: {
+export default function RankInfo(params: {
   nickname: string;
   rankImg: string;
   rank: string;
@@ -20,7 +20,7 @@ export default function PlayerNickname(params: {
   return (
     <SingleInfoContainer>
       <PlayerColumn>
-        <PlayerSmallText>{capitalize(params.nickname)}</PlayerSmallText>
+        <PlayerSmallText>Rank</PlayerSmallText>
         <Divider />
         <InfoRow>
           <PlayerColumn>

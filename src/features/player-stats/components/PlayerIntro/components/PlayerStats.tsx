@@ -1,5 +1,5 @@
 import { Player, Total } from "../../../../../shared/types/PlayerStats";
-import PlayerNickname from "./PlayerNickname";
+import RankInfo from "./RankInfo";
 import {
   Divider,
   GiantText,
@@ -10,7 +10,7 @@ import {
 } from "../../../PlayerStats.styles";
 import LevelInfo from "./LevelInfo";
 
-export default function PlayerMainInfo({
+export default function PlayerStats({
   player,
   total,
 }: {
@@ -25,7 +25,7 @@ export default function PlayerMainInfo({
       }}
     >
       <Row>
-        <PlayerNickname
+        <RankInfo
           nickname={player.name as string}
           rankImg={player.rank.rankImg}
           rank={player.rank.rankName as string}

@@ -15,8 +15,9 @@ export const PlayerStatsBackground = styled.img`
 
 export const InfoWrapper = styled.div`
   display: flex;
+  width: 100%;
   position: absolute;
-  flex-direction: row;
+  flex-direction: column;
   padding-right: 5rem;
   flex-wrap: wrap;
   justify-content: center;
@@ -24,6 +25,20 @@ export const InfoWrapper = styled.div`
 
   @media screen and (max-width: ${tabletBreakpoint}) {
     padding-right: 0;
+  }
+`;
+
+export const FlexRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+
+  width: 100%;
+
+  @media screen and (max-width: ${tabletBreakpoint}) {
+    flex-direction: column;
+    justify-content: center;
   }
 `;
 
@@ -139,6 +154,12 @@ export const RankImage = styled.img`
   width: 100px;
   height: 100px;
   margin: 0 20px;
+`;
+
+export const AvatarImage = styled.img`
+  width: 70px;
+  height: 70px;
+  margin-right: 8px;
 `;
 
 export const Row = styled.div`

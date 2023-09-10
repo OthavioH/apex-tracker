@@ -12,7 +12,7 @@ import { User } from "../../shared/types/PlayerStats";
 import PlayerIntro from "./components/PlayerIntro/PlayerIntro";
 import { AxiosError } from "axios";
 
-export default function PlayerStats() {
+export default function PlayerStatsScreen() {
   const [pageState, setPageState] = useState<PageState>(new LoadingState());
 
   let { platform, nickname } = useParams();
