@@ -23,7 +23,7 @@ export const InfoWrapper = styled.div`
   flex-wrap: wrap;
   justify-content: center;
 
-  @media screen and (max-width: ${mobileBreakpoint}) {
+  @media screen and (max-width: ${tabletBreakpoint}) {
     padding-right: 0;
   }
 `;
@@ -116,6 +116,10 @@ export const PlayerColumn = styled.div`
   justify-content: start;
   align-items: center;
   gap: 10px;
+
+  @media screen and (max-width: ${tabletBreakpoint}) {
+    width: 100%;
+  }
 `;
 
 export const InfoRow = styled.div`
