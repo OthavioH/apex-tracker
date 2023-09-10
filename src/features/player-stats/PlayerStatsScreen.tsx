@@ -36,7 +36,7 @@ export default function PlayerStatsScreen() {
         throw new Error(response.data.Error);
       }
 
-      setPageState(new LoadingState());
+      setPageState(new SuccessState());
       setUser(response.data);
     } catch (e) {
       let errorMessage: string;
