@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mobileBreakpoint, tabletBreakpoint } from "../../shared/styles/global";
 
 export const PlayerStatsBackground = styled.img`
   display: flex;
@@ -19,6 +20,12 @@ export const InfoWrapper = styled.div`
   flex-direction: row;
   width: 100%;
   padding-right: 10rem;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media screen and (max-width: ${mobileBreakpoint}) {
+    padding-right: 0;
+  }
 `;
 
 export const SingleInfoContainer = styled.div`
@@ -75,12 +82,20 @@ export const PlayerName = styled.h1`
   font-size: 2rem;
   font-weight: 600;
   text-shadow: 0 0 1px #000, 0 0 2px #000, 0 0 3px #000, 0 0 4px #000;
+
+  @media screen and (max-width: ${mobileBreakpoint}) {
+    font-size: var(--mobile-big-title-size);
+  }
 `;
 
 export const GiantText = styled.p`
   color: white;
-  font-size: 3.8rem;
+  font-size: var(--giant-text-size);
   font-weight: 600;
+
+  @media screen and (max-width: ${mobileBreakpoint}) {
+    font-size: var(--mobile-giant-text-size);
+  }
 `;
 
 export const PlayerSmallText = styled.h2`
@@ -124,6 +139,10 @@ export const Row = styled.div`
   width: 100%;
   justify-content: start;
   gap: 10px;
+
+  @media screen and (max-width: ${tabletBreakpoint}) {
+    justify-content: center;
+  }
 `;
 
 export const SelectedLegendImage = styled.img`

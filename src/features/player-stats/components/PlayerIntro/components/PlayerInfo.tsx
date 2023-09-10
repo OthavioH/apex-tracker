@@ -27,9 +27,10 @@ export default function PlayerMainInfo({
         <PlayerNickname
           nickname={player.name as string}
           rankImg={player.rank.rankImg}
+          rank={player.rank.rankName as string}
+          level={player.level}
         />
       </Row>
-      <LevelInfo level={player.level} rankImg={player.rank.rankImg} />
       <Row>
         <MultipleInfoContainer style={{ flexDirection: "row" }}>
           <PlayerColumn>

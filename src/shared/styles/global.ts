@@ -33,6 +33,8 @@ export const GlobalStyles = createGlobalStyle`
 
         --big-title-size: 100px;
         --mobile-big-title-size: 55px;
+        --giant-text-size: 3.8rem;
+        --mobile-giant-text-size: 2.5rem;
 
     }
 `;

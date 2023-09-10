@@ -1,31 +1,18 @@
 import {
   Divider,
   GiantText,
+  PlayerColumn,
   PlayerSmallText,
   RankImage,
   Row,
   SingleInfoContainer,
 } from "../../../PlayerStats.styles";
 
-export default function LevelInfo({
-  level,
-  rankImg,
-}: {
-  level: number;
-  rankImg: string;
-}) {
+export default function LevelInfo({ level }: { level: number }) {
   return (
-    <Row>
-      <SingleInfoContainer>
-        <PlayerSmallText>Rank</PlayerSmallText>
-        <Divider />
-        <RankImage src={rankImg} />
-      </SingleInfoContainer>
-      <SingleInfoContainer>
-        <PlayerSmallText>Level</PlayerSmallText>
-        <Divider />
-        <GiantText>{level}</GiantText>
-      </SingleInfoContainer>
-    </Row>
+    <PlayerColumn>
+      <PlayerSmallText>LVL</PlayerSmallText>
+      <GiantText>{level}</GiantText>
+    </PlayerColumn>
   );
 }

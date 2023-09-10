@@ -1,6 +1,7 @@
 import capitalize from "../../../../../shared/utils/capitalize";
 import {
   Divider,
+  GiantText,
   InfoRow,
   PlayerColumn,
   PlayerName,
@@ -8,24 +9,27 @@ import {
   RankImage,
   SingleInfoContainer,
 } from "../../../PlayerStats.styles";
+import LevelInfo from "./LevelInfo";
 
 export default function PlayerNickname(params: {
   nickname: string;
   rankImg: string;
+  rank: string;
+  level: number;
 }) {
   return (
     <SingleInfoContainer>
       <PlayerColumn>
-        <PlayerSmallText>Player</PlayerSmallText>
+        <PlayerSmallText>{capitalize(params.nickname)}</PlayerSmallText>
         <Divider />
         <InfoRow>
           <PlayerColumn>
             <RankImage src={params.rankImg} />
-            <PlayerSmallText style={playerNameStyle}>Rookie</PlayerSmallText>
+            <PlayerSmallText style={playerNameStyle}>
+              {params.rank}
+            </PlayerSmallText>
           </PlayerColumn>
-          <PlayerName style={playerNameStyle}>
-            {capitalize(params.nickname)}
-          </PlayerName>
+          <LevelInfo level={params.level} />
         </InfoRow>
       </PlayerColumn>
     </SingleInfoContainer>
