@@ -2,13 +2,12 @@ import styled from "styled-components";
 import { mobileBreakpoint, tabletBreakpoint } from "../../shared/styles/global";
 
 export const PlayerStatsBackground = styled.img`
-  display: flex;
   min-height: 94vh;
-  min-width: 100vw;
+  height: 100%;
+  width: 100%;
   position: relative;
 
   object-fit: fill;
-  overflow: hidden;
   object-position: center;
 
   filter: blur(5px) saturate(100%) brightness(80%) contrast(100%);
@@ -18,10 +17,10 @@ export const InfoWrapper = styled.div`
   display: flex;
   position: absolute;
   flex-direction: row;
-  width: 100%;
-  padding-right: 10rem;
+  padding-right: 5rem;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 
   @media screen and (max-width: ${tabletBreakpoint}) {
     padding-right: 0;
@@ -60,15 +59,21 @@ export const MultipleInfoContainer = styled.div`
 
 export const PlayerSection = styled.section`
   width: 100%;
+  min-height: 94vh;
   height: fit-content;
+
   position: relative;
   display: flex;
-  flex-direction: row;
+
+  flex-direction: colmun;
   align-items: flex-start;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  justify-content: flex-start;
 
   font-family: "Kanit";
+
+  @media screen and (max-width: ${mobileBreakpoint}) {
+    padding-bottom: 10px;
+  }
 `;
 
 export const PlayerBigText = styled.h1`

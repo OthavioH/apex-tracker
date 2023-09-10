@@ -17,6 +17,7 @@ export default function PlayerMainInfo({
   player: Player;
   total: Total;
 }) {
+  const kd = +total.kd?.value;
   return (
     <PlayerColumn
       style={{
@@ -41,7 +42,7 @@ export default function PlayerMainInfo({
           <PlayerColumn>
             <PlayerSmallText>K/D</PlayerSmallText>
             <Divider />
-            <GiantText>{total.kd?.value || 0}</GiantText>
+            <GiantText>{kd && kd > -1 ? kd : 0.0}</GiantText>
           </PlayerColumn>
           <PlayerColumn>
             <PlayerSmallText>BR Games</PlayerSmallText>
