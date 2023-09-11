@@ -45,7 +45,7 @@ export default function HomePage() {
 
   return (
     <MainContainer>
-      <BackgroundContainer src="homepage_background.jpg" loading='lazy' />
+      <BackgroundContainer src="homepage_background.jpg"/>
       <TitleWrapper onSubmit={handleSubtmit}>
         <HomePageTitle>
           Apex <span>Tracker</span>
