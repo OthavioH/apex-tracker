@@ -1,22 +1,11 @@
 import { useEffect, useState } from "react";
 import useStatsBackground from "../../../../shared/hooks/useStatsBackground";
-import { Player, User } from "../../../../shared/types/PlayerStats";
-import capitalize from "../../../../shared/utils/capitalize";
-import {
-  Divider,
-  FlexRow,
-  PlayerColumn,
-  PlayerSection,
-  PlayerSmallText,
-  PlayerStatsBackground,
-  Row,
-  SingleInfoContainer,
-} from "../../PlayerStats.styles";
+import { User } from "../../../../shared/types/PlayerStats";
+import { FlexRow, PlayerSection } from "../../PlayerStats.styles";
 import PlayerStats from "./components/PlayerStats";
 import SelectedLegend from "./components/SelectedLegend";
 import PlayerName from "./components/PlayerName";
-import { GiantText } from "../../../../shared/styles/styles";
-import SelectedBanner from "./components/SelectedBanner";
+import PlayerPickedBanner from "./components/PlayerPickedBanner/PlayerPickedBanner";
 
 interface PlayerInfoProps {
   user: User | undefined;
@@ -48,7 +37,7 @@ export default function PlayerIntro({ user }: PlayerInfoProps) {
       <FlexRow style={{ justifyContent: "center", gap: "18px" }}>
         {selectedLegend &&
           selectedLegend.data.map((selectedBanner, index) => (
-            <SelectedBanner
+            <PlayerPickedBanner
               name={selectedBanner.name as string}
               value={selectedBanner.value}
               key={index}

@@ -17,10 +17,11 @@ export const FlexRow = styled.div`
   flex-direction: row;
   justify-content: start;
   align-items: center;
+  flex-wrap: wrap;
 
   width: 100%;
 
-  @media screen and (max-width: ${tabletBreakpoint}) {
+  @media screen and (max-width: ${mobileBreakpoint}) {
     flex-direction: column;
     justify-content: center;
   }
@@ -31,14 +32,14 @@ export const SingleInfoContainer = styled.div`
   flex-direction: column;
   min-width: 150px;
   align-items: center;
-  padding: 10px 15px;
-  border-radius: 15px;
+  padding: 12px 16px;
+  border-radius: 16px;
   background-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 0.6),
     rgba(0, 0, 0, 0.8)
   );
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
 `;
 
 export const MultipleInfoContainer = styled.div`
