@@ -137,34 +137,38 @@ export interface DatumRank {
 }
 
 export interface Horizon {
-  data: DatumRank[];
+  data?: DatumRank[];
   ImgAssets: ImgAssets;
 }
 
 export interface Gibraltar {
   ImgAssets: ImgAssets;
+  data?: DatumRank[];
 }
 
 export interface Wattson {
   ImgAssets: ImgAssets;
+  data?: DatumRank[];
 }
 
 export interface Fuse {
-  data: DatumRank[];
-  gameInfo: GameInfo;
+  data?: DatumRank[];
   ImgAssets: ImgAssets;
 }
 
 export interface Bangalore {
   ImgAssets: ImgAssets;
+  data?: DatumRank[];
 }
 
 export interface Wraith {
   ImgAssets: ImgAssets;
+  data?: DatumRank[];
 }
 
 export interface Octane {
   ImgAssets: ImgAssets;
+  data?: DatumRank[];
 }
 
 export interface Rank4 {
@@ -174,19 +178,22 @@ export interface Rank4 {
 
 export interface Bloodhound {
   data: DatumRank[];
-  gameInfo: GameInfo;
   ImgAssets: ImgAssets;
+  data?: DatumRank[];
 }
 
 export interface Caustic {
   ImgAssets: ImgAssets;
+  data?: DatumRank[];
 }
 
 export interface Lifeline {
   ImgAssets: ImgAssets;
+  data?: DatumRank[];
 }
 
 export interface Pathfinder {
+  data?: DatumRank[];
   ImgAssets: ImgAssets;
 }
 
@@ -196,13 +203,13 @@ export interface Rank5 {
 }
 
 export interface Loba {
-  data: DatumRank[];
-  gameInfo: GameInfo;
+  data?: DatumRank[];
   ImgAssets: ImgAssets;
 }
 
 export interface Mirage {
   ImgAssets: ImgAssets;
+  data?: DatumRank[];
 }
 
 export interface Rank6 {
@@ -211,7 +218,7 @@ export interface Rank6 {
 }
 
 export interface Rampart {
-  data: DatumRank[];
+  data?: DatumRank[];
   ImgAssets: ImgAssets;
 }
 
@@ -221,24 +228,28 @@ export interface Rank7 {
 }
 
 export interface Valkyrie {
-  data: DatumRank[];
+  data?: DatumRank[];
   ImgAssets: ImgAssets;
 }
 
 export interface Seer {
   ImgAssets: ImgAssets;
+  data?: DatumRank[];
 }
 
 export interface Ash {
   ImgAssets: ImgAssets;
+  data?: DatumRank[];
 }
 
 export interface MadMaggie {
   ImgAssets: ImgAssets;
+  data?: DatumRank[];
 }
 
 export interface Newcastle {
   ImgAssets: ImgAssets;
+  data?: DatumRank[];
 }
 
 export interface Rank8 {
@@ -252,15 +263,21 @@ export interface RankPlatformSpecific7 {
 }
 
 export interface Vantage {
-  data: DatumRank[];
+  data?: DatumRank[];
   ImgAssets: ImgAssets;
 }
 
 export interface Catalyst {
   ImgAssets: ImgAssets;
+  data?: DatumRank[];
 }
 
-export interface Legends {
+export interface LegendStructure {
+  ImgAssets: ImgAssets;
+  data?: DatumRank[];
+}
+
+export interface LegendsAll {
   Revenant: Revenant;
   Crypto: Crypto;
   Horizon: Horizon;
@@ -288,7 +305,7 @@ export interface Legends {
 
 export interface Legends {
   selected: Selected;
-  all: any;
+  all: LegendsAll;
 }
 
 export interface RateLimit {
