@@ -9,7 +9,6 @@ export default function SelectedLegend({ legend }: { legend: Selected }) {
       }}
     >
       <SelectedLegendImage
-        loading="lazy"
         src={legend.ImgAssets.icon as string}
         alt={`${legend.LegendName} from Apex Legends`}
       />
